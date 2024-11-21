@@ -1,0 +1,24 @@
+return {
+  "raykibul/ChatGPT.nvim",
+  event = "VeryLazy",
+  config = function()
+    require("chatgpt").setup({
+      -- this config assumes you have OPENAI_API_KEY environment variable set
+      openai_params = {
+        model = "gpt-4o-mini",
+        frequency_penalty = 0,
+        presence_penalty = 0,
+        max_tokens = 4095,
+        temperature = 0.7,
+        top_p = 0.1,
+        n = 1,
+      }
+    })
+  end,
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    "nvim-lua/plenary.nvim",
+      "folke/trouble.nvim", -- optional
+    "nvim-telescope/telescope.nvim"
+  }
+}
